@@ -1,5 +1,5 @@
 // ✏️ Personalize aqui — adicione ou remova itens do catálogo
-const WHATSAPP = '5585999999999'
+const WHATSAPP = '5585991173279'
 
 const produtos = [
   { emoji: '🏄', nome: 'Tobogã Gigante', preco: 'R$ 350', disponivel: true, cor: '#FFD23F', bg: '#FFF8D6', destaque: true },

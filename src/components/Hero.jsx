@@ -1,5 +1,5 @@
 // ✏️ Personalize aqui
-const WHATSAPP = '5585999999999'
+const WHATSAPP = '5585991173279'
 const MSG_WHATSAPP = 'Olá! Quero saber mais sobre os brinquedos para locação.'
 
 function Hero() {

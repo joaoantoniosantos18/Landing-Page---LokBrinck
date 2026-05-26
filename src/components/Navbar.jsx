@@ -1,6 +1,6 @@
 // ✏️ Personalize aqui
 const NOME_EMPRESA = 'SG Locação'
-const WHATSAPP = '5585999999999' // troque pelo número real
+const WHATSAPP = '5585991173279' // troque pelo número real
 const MSG_WHATSAPP = 'Olá! Quero saber mais sobre os brinquedos para locação.'
 
 function Navbar() {

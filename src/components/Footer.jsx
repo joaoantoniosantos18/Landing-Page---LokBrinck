@@ -1,7 +1,7 @@
 // ✏️ Personalize aqui
 const NOME_EMPRESA = 'SG Locação'
-const WHATSAPP_DISPLAY = '(85) 99999-9999'
-const WHATSAPP = '5585999999999'
+const WHATSAPP_DISPLAY = '(85) 99117-3279'
+const WHATSAPP = '5585991173279'
 const EMAIL = 'contato@sglocacao.com.br'
 const INSTAGRAM = 'https://instagram.com/sglocacao'
 const CIDADE = 'Fortaleza, CE'

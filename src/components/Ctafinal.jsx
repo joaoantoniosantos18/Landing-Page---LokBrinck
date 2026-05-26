@@ -1,5 +1,5 @@
 // ✏️ Personalize aqui
-const WHATSAPP = '5585999999999'
+const WHATSAPP = '5585991173279'
 const MSG_WHATSAPP = 'Olá! Quero agendar um brinquedo para minha festa!'
 
 function CTAFinal() {
