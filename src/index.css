@@ -34,6 +34,7 @@ body {
   --radius-sm:    12px;
 }
 
+/* Overrides Bootstrap para tema */
 .card {
   background-color: var(--bg-card) !important;
   border-color: var(--cinza-200) !important;
@@ -58,6 +59,7 @@ body {
   color: var(--texto-principal);
 }
 
+/* Botão principal com gradiente */
 .btn-festa {
   background: linear-gradient(135deg, var(--primaria), var(--rosa));
   color: #fff !important;
@@ -80,6 +82,7 @@ body {
   transform: none;
 }
 
+/* Cards com hover */
 .card-hover {
   transition: transform 0.2s, box-shadow 0.2s !important;
   border: 2px solid var(--cinza-200) !important;
