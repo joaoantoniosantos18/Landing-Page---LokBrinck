@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Diferenciais from './components/Diferenciais'
 import Catalogo from './components/Catalogo'
 import ComoFunciona from './components/ComoFunciona'
+import Galeria from './components/Galeria'
 import Depoimentos from './components/Depoimentos'
 import CTAFinal from './components/CTAFinal'
 import Footer from './components/Footer'
@@ -16,6 +17,7 @@ function App() {
       <Diferenciais />
       <Catalogo />
       <ComoFunciona />
+      <Galeria />
       <Depoimentos />
       <CTAFinal />
       <Footer />

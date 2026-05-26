@@ -2,30 +2,34 @@ const diferenciais = [
   {
     emoji: '🚚',
     titulo: 'Entrega e montagem inclusa',
-    descricao: 'Levamos até você, montamos tudo e buscamos depois. Sem dor de cabeça!',
+    descricao: 'Levamos até você, montamos tudo e buscamos depois. Sem dor de cabeça, sem custo extra.',
     cor: 'var(--primaria)',
-    bg: 'var(--amarelo-claro)',
+    bg: 'linear-gradient(135deg, #FFF8D6, #FFF3E0)',
+    borda: 'var(--amarelo)',
   },
   {
     emoji: '🧼',
     titulo: 'Higienizados e seguros',
-    descricao: 'Todos os brinquedos passam por limpeza e vistoria antes de cada evento.',
+    descricao: 'Todos os brinquedos passam por limpeza rigorosa e vistoria de segurança antes de cada evento.',
     cor: 'var(--verde)',
-    bg: 'var(--verde-claro)',
+    bg: 'linear-gradient(135deg, #CCFBEF, #E0FFF6)',
+    borda: 'var(--verde)',
   },
   {
     emoji: '⚡',
-    titulo: 'Agendamento fácil',
-    descricao: 'Reserve pelo WhatsApp em minutos. Confirmação rápida e sem burocracia.',
+    titulo: 'Agendamento em minutos',
+    descricao: 'Reserve pelo WhatsApp em minutos. Confirmação rápida e atendimento personalizado.',
     cor: 'var(--secundaria)',
-    bg: 'var(--cinza-200)',
+    bg: 'linear-gradient(135deg, #EDE0FF, #F3EEFF)',
+    borda: 'var(--secundaria)',
   },
   {
     emoji: '🎉',
-    titulo: 'Para todo tipo de evento',
-    descricao: 'Aniversários, confraternizações, festas escolares — temos o tamanho certo.',
+    titulo: 'Para qualquer evento',
+    descricao: 'Aniversários, confraternizações, festas escolares — temos o brinquedo certo para cada momento.',
     cor: 'var(--rosa)',
-    bg: '#FFF0F6',
+    bg: 'linear-gradient(135deg, #FFF0F6, #FFE8F2)',
+    borda: 'var(--rosa)',
   },
 ]
 
@@ -33,66 +37,74 @@ function Diferenciais() {
   return (
     <section
       id="diferenciais"
-      className="py-5"
-      style={{ background: 'var(--bg-principal)' }}
+      style={{ background: 'var(--bg-principal)', padding: '100px 0' }}
     >
       <div className="container">
+
+        {/* Cabeçalho */}
         <div className="text-center mb-5">
-          <span
-            className="badge mb-2 px-3 py-2 fw-bold"
-            style={{
-              background: 'var(--cinza-200)',
-              color: 'var(--secundaria)',
-              borderRadius: 30,
-              fontSize: '0.85rem',
-            }}
-          >
-            ✨ Por que a gente?
-          </span>
+          <p className="fw-bold mb-2" style={{ color: 'var(--secundaria)', fontSize: '0.95rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            ✨ Por que escolher a gente
+          </p>
           <h2
             className="fw-black"
             style={{
-              fontSize: 'clamp(1.6rem, 4vw, 2.4rem)',
+              fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               color: 'var(--texto-principal)',
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.04em',
+              lineHeight: 1.15,
             }}
           >
             A festa fica na memória,{' '}
-            <span style={{ color: 'var(--secundaria)' }}>o trabalho fica com a gente</span>
+            <br className="d-none d-md-block" />
+            <span style={{ color: 'var(--primaria)' }}>o trabalho fica com a gente</span>
           </h2>
-          <p style={{ color: 'var(--texto-secundario)', fontWeight: 600, maxWidth: 500, margin: '0.5rem auto 0' }}>
-            Cuidamos de tudo para você focar só em aproveitar o momento especial.
+          <p
+            className="mx-auto mt-3"
+            style={{ color: 'var(--texto-secundario)', fontWeight: 600, fontSize: '1.05rem', maxWidth: 520, lineHeight: 1.7 }}
+          >
+            Cuidamos de cada detalhe para você focar só em aproveitar o momento especial dos seus filhos.
           </p>
         </div>
 
+        {/* Cards */}
         <div className="row g-4">
           {diferenciais.map((item) => (
             <div key={item.titulo} className="col-sm-6 col-lg-3">
               <div
-                className="card card-hover p-4 h-100 text-center"
-                style={{ borderRadius: 'var(--radius)', boxShadow: 'var(--sombra)' }}
+                className="card-hover h-100 p-4"
+                style={{
+                  background: item.bg,
+                  borderRadius: 'var(--radius)',
+                  border: `2px solid ${item.borda}30`,
+                  boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+                }}
               >
                 <div
-                  className="d-flex align-items-center justify-content-center mx-auto mb-3"
                   style={{
-                    width: 70,
-                    height: 70,
-                    borderRadius: '50%',
-                    background: item.bg,
-                    fontSize: '2rem',
+                    width: 72,
+                    height: 72,
+                    borderRadius: 20,
+                    background: 'white',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '2.2rem',
+                    marginBottom: '1.2rem',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
                   }}
                 >
                   {item.emoji}
                 </div>
                 <h5
                   className="fw-black mb-2"
-                  style={{ color: item.cor, letterSpacing: '-0.02em' }}
+                  style={{ color: item.cor, letterSpacing: '-0.02em', fontSize: '1.1rem' }}
                 >
                   {item.titulo}
                 </h5>
                 <p
                   className="mb-0"
-                  style={{ color: 'var(--texto-secundario)', fontWeight: 600, fontSize: '0.95rem' }}
+                  style={{ color: 'var(--texto-secundario)', fontWeight: 600, fontSize: '0.95rem', lineHeight: 1.65 }}
                 >
                   {item.descricao}
                 </p>
@@ -100,6 +112,7 @@ function Diferenciais() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )

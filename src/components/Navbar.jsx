@@ -1,6 +1,6 @@
 // ✏️ Personalize aqui
 const NOME_EMPRESA = 'SG Locação'
-const WHATSAPP = '5585991173279' // troque pelo número real
+const WHATSAPP = '5585999999999'
 const MSG_WHATSAPP = 'Olá! Quero saber mais sobre os brinquedos para locação.'
 
 function Navbar() {
@@ -8,32 +8,65 @@ function Navbar() {
 
   return (
     <nav
-      className="navbar px-3 py-2 flex-wrap gap-2"
       style={{
-        background: 'linear-gradient(135deg, #9B5DE5, #7B2FBE)',
-        minHeight: 64,
         position: 'sticky',
         top: 0,
-        zIndex: 100,
-        boxShadow: '0 2px 20px rgba(123,47,190,0.3)',
+        zIndex: 200,
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        background: 'rgba(255,255,255,0.85)',
+        borderBottom: '1px solid rgba(155,93,229,0.1)',
+        boxShadow: '0 2px 30px rgba(155,93,229,0.08)',
+        padding: '0.75rem 0',
       }}
     >
-      <a className="navbar-brand text-white fw-black fs-4 text-decoration-none" href="#">
-        🎪 {NOME_EMPRESA}
-      </a>
-      <div className="d-flex align-items-center flex-wrap gap-3">
-        <a href="#diferenciais" className="text-white fw-bold text-decoration-none small">
-          Por que nós?
+      <div className="container d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <a href="#" className="text-decoration-none d-flex align-items-center gap-2">
+          <span style={{ fontSize: '1.8rem' }}>🎪</span>
+          <span
+            className="fw-black"
+            style={{
+              fontSize: '1.4rem',
+              color: 'var(--texto-principal)',
+              letterSpacing: '-0.03em',
+            }}
+          >
+            {NOME_EMPRESA}
+          </span>
         </a>
-        <a href="#catalogo" className="text-white fw-bold text-decoration-none small">
-          Catálogo
-        </a>
-        <a href="#como-funciona" className="text-white fw-bold text-decoration-none small">
-          Como funciona
-        </a>
-        <a href={urlWhats} target="_blank" rel="noreferrer" className="btn btn-festa px-3 py-2">
-          📲 Agendar agora
-        </a>
+
+        <div className="d-flex align-items-center flex-wrap gap-4">
+          {[
+            { href: '#diferenciais', label: 'Por que nós?' },
+            { href: '#catalogo', label: 'Catálogo' },
+            { href: '#como-funciona', label: 'Como funciona' },
+          ].map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-decoration-none fw-bold"
+              style={{
+                color: 'var(--texto-secundario)',
+                fontSize: '0.95rem',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => (e.target.style.color = 'var(--secundaria)')}
+              onMouseLeave={(e) => (e.target.style.color = 'var(--texto-secundario)')}
+            >
+              {link.label}
+            </a>
+          ))}
+
+          <a
+            href={urlWhats}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-festa px-4 py-2"
+            style={{ fontSize: '0.9rem' }}
+          >
+            📲 Reservar agora
+          </a>
+        </div>
       </div>
     </nav>
   )

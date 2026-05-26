@@ -1,78 +1,108 @@
 // ✏️ Personalize aqui
-const NOME_EMPRESA = 'SG Locação'
-const WHATSAPP_DISPLAY = '(85) 99117-3279'
-const WHATSAPP = '5585991173279'
-const EMAIL = 'contato@sglocacao.com.br'
-const INSTAGRAM = 'https://instagram.com/sglocacao'
-const CIDADE = 'Fortaleza, CE'
+const NOME_EMPRESA   = 'SG Locação'
+const WHATSAPP_LABEL = '(85) 99999-9999'
+const WHATSAPP       = '5585999999999'
+const EMAIL          = 'contato@sglocacao.com.br'
+const INSTAGRAM      = 'https://instagram.com/sglocacao'
+const CIDADE         = 'Fortaleza, CE'
+const ANO_FUNDACAO   = '2021'
 
 function Footer() {
   return (
     <footer
-      className="py-5"
       style={{
-        background: 'linear-gradient(135deg, #1a0a3d, #2D1B69)',
-        color: 'rgba(255,255,255,0.85)',
+        background: 'linear-gradient(180deg, #1a0a3d 0%, #0d0520 100%)',
+        padding: '60px 0 30px',
+        color: 'rgba(255,255,255,0.75)',
       }}
     >
       <div className="container">
-        <div className="row g-4 mb-4">
+        <div className="row g-5 mb-5">
 
-          {/* Coluna 1 — Marca */}
+          {/* Marca */}
           <div className="col-md-4">
-            <div className="fw-black text-white mb-2" style={{ fontSize: '1.5rem' }}>
-              🎪 {NOME_EMPRESA}
+            <div className="d-flex align-items-center gap-2 mb-3">
+              <span style={{ fontSize: '2rem' }}>🎪</span>
+              <span
+                className="fw-black text-white"
+                style={{ fontSize: '1.4rem', letterSpacing: '-0.03em' }}
+              >
+                {NOME_EMPRESA}
+              </span>
             </div>
-            <p style={{ fontWeight: 600, opacity: 0.75, fontSize: '0.95rem', lineHeight: 1.6 }}>
-              Aluguel de brinquedos para festas infantis com entrega, montagem e
-              desmontagem inclusos. Diversão garantida! 🎉
+            <p
+              style={{
+                fontWeight: 600,
+                lineHeight: 1.7,
+                fontSize: '0.95rem',
+                maxWidth: 280,
+                color: 'rgba(255,255,255,0.6)',
+              }}
+            >
+              Aluguel de brinquedos para festas infantis com entrega,
+              montagem e desmontagem inclusos. Diversão garantida desde {ANO_FUNDACAO}! 🎉
             </p>
           </div>
 
-          {/* Coluna 2 — Links */}
+          {/* Links */}
           <div className="col-md-4">
-            <h6 className="fw-black text-white mb-3" style={{ letterSpacing: '-0.01em' }}>
-              Links rápidos
+            <h6
+              className="fw-black text-white mb-4"
+              style={{ letterSpacing: '-0.01em', fontSize: '1rem' }}
+            >
+              Navegação
             </h6>
-            <div className="d-flex flex-column gap-2">
+            <div className="d-flex flex-column gap-3">
               {[
-                { href: '#diferenciais', label: '✨ Por que nós?' },
-                { href: '#catalogo', label: '🎠 Catálogo' },
-                { href: '#como-funciona', label: '🗺️ Como funciona' },
+                { href: '#diferenciais', label: 'Por que nós?' },
+                { href: '#catalogo',     label: 'Catálogo' },
+                { href: '#como-funciona',label: 'Como funciona' },
               ].map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-decoration-none fw-bold"
-                  style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', transition: 'color 0.2s' }}
-                  onMouseEnter={(e) => e.target.style.color = 'var(--amarelo)'}
-                  onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                  className="text-decoration-none fw-bold d-flex align-items-center gap-2"
+                  style={{
+                    color: 'rgba(255,255,255,0.55)',
+                    fontSize: '0.95rem',
+                    transition: 'color 0.2s',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--amarelo)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                 >
+                  <span style={{ opacity: 0.4 }}>→</span>
                   {link.label}
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Coluna 3 — Contato */}
+          {/* Contato */}
           <div className="col-md-4">
-            <h6 className="fw-black text-white mb-3" style={{ letterSpacing: '-0.01em' }}>
+            <h6
+              className="fw-black text-white mb-4"
+              style={{ letterSpacing: '-0.01em', fontSize: '1rem' }}
+            >
               Contato
             </h6>
-            <div className="d-flex flex-column gap-2">
+            <div className="d-flex flex-column gap-3">
               <a
                 href={`https://wa.me/${WHATSAPP}`}
                 target="_blank"
                 rel="noreferrer"
-                className="text-decoration-none fw-bold"
-                style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}
+                className="text-decoration-none fw-bold d-flex align-items-center gap-2"
+                style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.95rem', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#25D366')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
               >
-                📱 {WHATSAPP_DISPLAY}
+                📱 {WHATSAPP_LABEL}
               </a>
               <a
                 href={`mailto:${EMAIL}`}
-                className="text-decoration-none fw-bold"
-                style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}
+                className="text-decoration-none fw-bold d-flex align-items-center gap-2"
+                style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.95rem', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'white')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
               >
                 ✉️ {EMAIL}
               </a>
@@ -80,12 +110,17 @@ function Footer() {
                 href={INSTAGRAM}
                 target="_blank"
                 rel="noreferrer"
-                className="text-decoration-none fw-bold"
-                style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}
+                className="text-decoration-none fw-bold d-flex align-items-center gap-2"
+                style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.95rem', transition: 'color 0.2s' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#E1306C')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
               >
                 📸 Instagram
               </a>
-              <span style={{ fontSize: '0.95rem', fontWeight: 600, opacity: 0.7 }}>
+              <span
+                className="fw-bold d-flex align-items-center gap-2"
+                style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.95rem' }}
+              >
                 📍 {CIDADE}
               </span>
             </div>
@@ -93,9 +128,21 @@ function Footer() {
 
         </div>
 
-        {/* Linha divisória */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
-          <p className="text-center mb-0" style={{ fontSize: '0.85rem', opacity: 0.5, fontWeight: 600 }}>
+        {/* Rodapé inferior */}
+        <div
+          style={{
+            borderTop: '1px solid rgba(255,255,255,0.08)',
+            paddingTop: '1.5rem',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '0.5rem',
+          }}
+        >
+          <p
+            className="mb-0 text-center"
+            style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.3)', fontWeight: 600 }}
+          >
             © {new Date().getFullYear()} {NOME_EMPRESA} · Todos os direitos reservados · Feito com ❤️ para festas incríveis
           </p>
         </div>

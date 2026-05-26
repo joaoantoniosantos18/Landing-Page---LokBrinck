@@ -5,31 +5,31 @@ const etapas = [
     titulo: 'Escolha o brinquedo',
     descricao: 'Navegue pelo catálogo e escolha o que vai deixar a garotada feliz.',
     cor: 'var(--primaria)',
-    bg: 'var(--amarelo-claro)',
+    bg: 'linear-gradient(135deg, #FFF8D6, #FFE4C4)',
   },
   {
     numero: '02',
     emoji: '📅',
     titulo: 'Informe a data e local',
-    descricao: 'Mande mensagem pelo WhatsApp com a data, horário e endereço da festa.',
+    descricao: 'Mande mensagem com a data, horário e endereço da festa pelo WhatsApp.',
     cor: 'var(--secundaria)',
-    bg: 'var(--cinza-200)',
+    bg: 'linear-gradient(135deg, #EDE0FF, #E0D0FF)',
   },
   {
     numero: '03',
     emoji: '✅',
-    titulo: 'A gente confirma',
+    titulo: 'Confirmamos tudo',
     descricao: 'Verificamos disponibilidade e confirmamos todos os detalhes com você.',
     cor: 'var(--verde)',
-    bg: 'var(--verde-claro)',
+    bg: 'linear-gradient(135deg, #CCFBEF, #B0F4E4)',
   },
   {
     numero: '04',
     emoji: '🎉',
     titulo: 'Só aproveitar!',
-    descricao: 'Entregamos, montamos e buscamos. Você curte a festa sem preocupação.',
+    descricao: 'Montamos, entregamos e buscamos. Você curte a festa sem preocupação.',
     cor: 'var(--rosa)',
-    bg: '#FFF0F6',
+    bg: 'linear-gradient(135deg, #FFF0F6, #FFE0EE)',
   },
 ]
 
@@ -37,52 +37,68 @@ function ComoFunciona() {
   return (
     <section
       id="como-funciona"
-      className="py-5"
-      style={{ background: 'var(--bg-principal)' }}
+      style={{ background: 'var(--bg-principal)', padding: '100px 0' }}
     >
       <div className="container">
+
         <div className="text-center mb-5">
-          <span
-            className="badge mb-2 px-3 py-2 fw-bold"
-            style={{
-              background: 'var(--cinza-200)',
-              color: 'var(--secundaria)',
-              borderRadius: 30,
-              fontSize: '0.85rem',
-            }}
-          >
+          <p className="fw-bold mb-2" style={{ color: 'var(--verde)', fontSize: '0.95rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
             🗺️ Passo a passo
-          </span>
+          </p>
           <h2
             className="fw-black"
             style={{
-              fontSize: 'clamp(1.6rem, 4vw, 2.4rem)',
+              fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               color: 'var(--texto-principal)',
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.04em',
+              lineHeight: 1.15,
             }}
           >
             Como funciona?{' '}
-            <span style={{ color: 'var(--secundaria)' }}>É simples assim!</span>
+            <span style={{ color: 'var(--secundaria)' }}>É simples assim! 😄</span>
           </h2>
         </div>
 
-        <div className="row g-4 align-items-start">
-          {etapas.map((etapa, index) => (
-            <div key={etapa.numero} className="col-sm-6 col-lg-3">
+        {/* Steps */}
+        <div className="row g-4 align-items-stretch position-relative">
+          {/* Linha conectora decorativa (só desktop) */}
+          <div
+            className="d-none d-lg-block"
+            style={{
+              position: 'absolute',
+              top: '42%',
+              left: '12.5%',
+              right: '12.5%',
+              height: 3,
+              background: 'linear-gradient(90deg, var(--primaria), var(--secundaria), var(--verde), var(--rosa))',
+              borderRadius: 4,
+              opacity: 0.25,
+              zIndex: 0,
+            }}
+          />
+
+          {etapas.map((etapa) => (
+            <div key={etapa.numero} className="col-sm-6 col-lg-3" style={{ position: 'relative', zIndex: 1 }}>
               <div
-                className="card card-hover p-4 h-100"
-                style={{ borderRadius: 'var(--radius)', boxShadow: 'var(--sombra)' }}
+                className="card-hover h-100 p-4 text-center"
+                style={{
+                  background: etapa.bg,
+                  borderRadius: 'var(--radius)',
+                  border: '2px solid transparent',
+                  boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+                }}
               >
-                {/* Número grande */}
+                {/* Número grande decorativo */}
                 <div
-                  className="fw-black mb-2"
+                  className="fw-black"
                   style={{
-                    fontSize: '3.5rem',
+                    fontSize: '5rem',
                     lineHeight: 1,
                     color: etapa.cor,
-                    opacity: 0.2,
+                    opacity: 0.12,
+                    letterSpacing: '-0.06em',
+                    marginBottom: '-0.5rem',
                     fontFamily: 'Nunito, sans-serif',
-                    letterSpacing: '-0.04em',
                   }}
                 >
                   {etapa.numero}
@@ -90,50 +106,47 @@ function ComoFunciona() {
 
                 {/* Ícone */}
                 <div
-                  className="d-flex align-items-center justify-content-center mb-3"
                   style={{
-                    width: 60,
-                    height: 60,
+                    width: 72,
+                    height: 72,
                     borderRadius: '50%',
-                    background: etapa.bg,
-                    fontSize: '1.8rem',
+                    background: 'white',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '2rem',
+                    margin: '0 auto 1rem',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
                   }}
                 >
                   {etapa.emoji}
                 </div>
 
+                {/* Número visível */}
+                <span
+                  className="fw-black d-block mb-1"
+                  style={{ fontSize: '0.78rem', color: etapa.cor, letterSpacing: '0.06em', textTransform: 'uppercase' }}
+                >
+                  Passo {etapa.numero}
+                </span>
+
                 <h5
                   className="fw-black mb-2"
-                  style={{ color: etapa.cor, letterSpacing: '-0.02em' }}
+                  style={{ color: 'var(--texto-principal)', letterSpacing: '-0.02em', fontSize: '1.1rem' }}
                 >
                   {etapa.titulo}
                 </h5>
                 <p
                   className="mb-0"
-                  style={{ color: 'var(--texto-secundario)', fontWeight: 600, fontSize: '0.95rem' }}
+                  style={{ color: 'var(--texto-secundario)', fontWeight: 600, fontSize: '0.93rem', lineHeight: 1.65 }}
                 >
                   {etapa.descricao}
                 </p>
-
-                {/* Seta conectora (exceto no último) */}
-                {index < etapas.length - 1 && (
-                  <div
-                    className="d-none d-lg-block position-absolute"
-                    style={{
-                      right: -18,
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      fontSize: '1.5rem',
-                      zIndex: 1,
-                    }}
-                  >
-                    →
-                  </div>
-                )}
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )
